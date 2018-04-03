@@ -90,6 +90,191 @@ newtype Rep (ki :: kon -> *) (phi :: Nat -> *) (code :: [[Atom kon]])
 type PoA (ki :: kon -> *) (phi :: Nat -> *) = NP (NA ki phi)
 
 
+data SDigit :: Digit -> * where
+  SD0' :: SDigit D0'
+  SD1' :: SDigit D1'
+  SD2' :: SDigit D2'
+  SD3' :: SDigit D3'
+  SD4' :: SDigit D4'
+  SD5' :: SDigit D5'
+  SD6' :: SDigit D6'
+  SD7' :: SDigit D7'
+  SD8' :: SDigit D8'
+  SD9' :: SDigit D9'
+  SD10' :: SDigit D10'
+  SD11' :: SDigit D11'
+  SD12' :: SDigit D12'
+  SD13' :: SDigit D13'
+  SD14' :: SDigit D14'
+  SD15' :: SDigit D15'
+  SD16' :: SDigit D16'
+  SD17' :: SDigit D17'
+  SD18' :: SDigit D18'
+  SD19' :: SDigit D19'
+  SD20' :: SDigit D20'
+  SD21' :: SDigit D21'
+  SD22' :: SDigit D22'
+  SD23' :: SDigit D23'
+  SD24' :: SDigit D24'
+  SD25' :: SDigit D25'
+  SD26' :: SDigit D26'
+  SD27' :: SDigit D27'
+  SD28' :: SDigit D28'
+  SD29' :: SDigit D29'
+  SD30' :: SDigit D30'
+  SD31' :: SDigit D31'
+  SD32' :: SDigit D32'
+  SD33' :: SDigit D33'
+  SD34' :: SDigit D34'
+  SD35' :: SDigit D35'
+  SD36' :: SDigit D36'
+  SD37' :: SDigit D37'
+  SD38' :: SDigit D38'
+  SD39' :: SDigit D39'
+  SD40' :: SDigit D40'
+  SD41' :: SDigit D41'
+  SD42' :: SDigit D42'
+  SD43' :: SDigit D43'
+  SD44' :: SDigit D44'
+  SD45' :: SDigit D45'
+  SD46' :: SDigit D46'
+  SD47' :: SDigit D47'
+  SD48' :: SDigit D48'
+  SD49' :: SDigit D49'
+  SD50' :: SDigit D50'
+  SD51' :: SDigit D51'
+  SD52' :: SDigit D52'
+  SD53' :: SDigit D53'
+  SD54' :: SDigit D54'
+  SD55' :: SDigit D55'
+  SD56' :: SDigit D56'
+  SD57' :: SDigit D57'
+  SD58' :: SDigit D58'
+
+data Digit
+  = D0'
+  | D1'
+  | D2'
+  | D3'
+  | D4'
+  | D5'
+  | D6'
+  | D7'
+  | D8'
+  | D9'
+  | D10'
+  | D11'
+  | D12'
+  | D13'
+  | D14'
+  | D15'
+  | D16'
+  | D17'
+  | D18'
+  | D19'
+  | D20'
+  | D21'
+  | D22'
+  | D23'
+  | D24'
+  | D25'
+  | D26'
+  | D27'
+  | D28'
+  | D29'
+  | D30'
+  | D31'
+  | D32'
+  | D33'
+  | D34'
+  | D35'
+  | D36'
+  | D37'
+  | D38'
+  | D39'
+  | D40'
+  | D41'
+  | D42'
+  | D43'
+  | D44'
+  | D45'
+  | D46'
+  | D47'
+  | D48'
+  | D49'
+  | D50'
+  | D51'
+  | D52'
+  | D53'
+  | D54'
+  | D55'
+  | D56'
+  | D57'
+  | D58'
+
+
+-- artificial lookup
+type family Lkup' (n :: Digit) (ks :: [k]) :: k where
+  Lkup' D0'  (k ': '[])= k
+  Lkup' D1'  (k ': '[]) = k
+  Lkup' D2'  (k ': '[]) = k
+  Lkup' D3'  (k ': '[]) = k
+  Lkup' D4'  (k ': '[]) = k
+  Lkup' D5'  (k ': '[]) = k
+  Lkup' D6'  (k ': '[]) = k
+  Lkup' D7'  (k ': '[]) = k
+  Lkup' D8'  (k ': '[]) = k
+  Lkup' D9'  (k ': '[]) = k
+  Lkup' D10' (k ': '[]) = k
+  Lkup' D11' (k ': '[]) = k
+  Lkup' D12' (k ': '[]) = k
+  Lkup' D13' (k ': '[]) = k
+  Lkup' D14' (k ': '[]) = k
+  Lkup' D15' (k ': '[]) = k
+  Lkup' D16' (k ': '[]) = k
+  Lkup' D17' (k ': '[]) = k
+  Lkup' D18' (k ': '[]) = k
+  Lkup' D19' (k ': '[]) = k
+  Lkup' D20' (k ': '[]) = k
+  Lkup' D21' (k ': '[]) = k
+  Lkup' D22' (k ': '[]) = k
+  Lkup' D23' (k ': '[]) = k
+  Lkup' D24' (k ': '[]) = k
+  Lkup' D25' (k ': '[]) = k
+  Lkup' D26' (k ': '[]) = k
+  Lkup' D27' (k ': '[]) = k
+  Lkup' D28' (k ': '[]) = k
+  Lkup' D29' (k ': '[]) = k
+  Lkup' D30' (k ': '[]) = k
+  Lkup' D31' (k ': '[]) = k
+  Lkup' D32' (k ': '[]) = k
+  Lkup' D33' (k ': '[]) = k
+  Lkup' D34' (k ': '[]) = k
+  Lkup' D35' (k ': '[]) = k
+  Lkup' D36' (k ': '[]) = k
+  Lkup' D37' (k ': '[]) = k
+  Lkup' D38' (k ': '[]) = k
+  Lkup' D39' (k ': '[]) = k
+  Lkup' D40' (k ': '[]) = k
+  Lkup' D41' (k ': '[]) = k
+  Lkup' D42' (k ': '[]) = k
+  Lkup' D43' (k ': '[]) = k
+  Lkup' D44' (k ': '[]) = k
+  Lkup' D45' (k ': '[]) = k
+  Lkup' D46' (k ': '[]) = k
+  Lkup' D47' (k ': '[]) = k
+  Lkup' D48' (k ': '[]) = k
+  Lkup' D49' (k ': '[]) = k
+  Lkup' D50' (k ': '[]) = k
+  Lkup' D51' (k ': '[]) = k
+  Lkup' D52' (k ': '[]) = k
+  Lkup' D53' (k ': '[]) = k
+  Lkup' D54' (k ': '[]) = k
+  Lkup' D55' (k ': '[]) = k
+  Lkup' D56' (k ': '[]) = k
+  Lkup' D57' (k ': '[]) = k
+  Lkup' D58' (k ': '[]) = k
+
 
 pattern SD0  = SZ
 pattern SD1  = SS SZ
